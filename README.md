@@ -1,4 +1,4 @@
-# 🛍️ API de Moda Feminina - Vitor Reis e Bruno Vilela
+# 🛍 Música- Vitor, Bruno, Giovanna, Mayra
 
 Esta API foi desenvolvida como requisito para obtenção de nota no curso **Técnico em Desenvolvimento de Sistemas**, na disciplina **Programação Web 3**, ministrada pelos professores **Fátima** e **Cláudio**.
 
