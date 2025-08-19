@@ -1,251 +1,123 @@
-# 🛍 Música- Vitor, Bruno, Giovanna, Mayra
+# 🎵 Flowy - Bruno, Vitor, Giovanna, Mayra
 
-Esta API foi desenvolvida como requisito para obtenção de nota no curso **Técnico em Desenvolvimento de Sistemas**, na disciplina **Programação Web 3**, ministrada pelos professores **Fátima** e **Cláudio**.
+Esta API e app foram desenvolvidos como requisito para obtenção de nota no curso **Técnico em Desenvolvimento de Sistemas**, na disciplina **Programação Mobile**, ministrada pelos professores **Pompeu** e **Gilson**.
 
-O objetivo é fornecer uma API simples para um e-commerce de moda feminina, com dados de produtos como roupas, calçados e acessórios.
-
-Usamos uma tela principal para exibir a api, você pode realizar as alterações com as requisições e visualmente ver as alterações na tela através do index.html
-
-## Estrutura principal da API: 
-
-Arquivos:
-```
-// São os modulos necessários para o uso e armazenamento de informações
-node_modules
-package
-package-lock
-produtos.json
-
-// API
-index.js 
-```
----
-
-## 🚀 Diferenciais da nossa API
-
-Usamos um arquivo JSON que atua como um "banco de dados" local, onde ao modificar as informações com as requisições, as alterações permanecerão mesmo que o servidor seja desligado ou reiniciado, dessa forma a tornando funcional e segura.
-O arquivo que atua como o banco pode ser localizado na raiz quando clonado o repositório com o nome:
-
-```
-produtos.json
-```
+O objetivo do projeto **FLOWY** é criar um **app de música simplificado**, semelhante a um Spotify, permitindo que os usuários criem playlists, ouçam músicas, explorem artistas e gerenciem suas músicas de forma prática e organizada.
 
 ---
 
-## 📦 Funcionalidades da API
+## 🚀 Resumo do Projeto
 
-- Listagem de produtos via requisição `GET`
-- Inserção de novos produtos via requisição `POST`
-- Delete de produtos via requisição `DELETE`
-- Atualização de produtos via requisição `PUT`
-- Suporte a CORS para integração com front-end em qualquer origem
+O **FLOWY** é um app mobile desenvolvido em **React Native com Expo**, conectado a um banco de dados (local ou remoto) para salvar usuários, playlists e músicas. O app possui:
+
+- Tela de login e cadastro de usuários
+- Tela inicial com playlists e músicas recomendadas
+- Biblioteca de artistas e álbuns
+- Player simples para tocar músicas
+- Gestão de playlists do usuário
+- Tela sobre o projeto
+
+O objetivo é criar uma experiência educativa e funcional, mostrando conceitos de programação mobile, navegação entre telas, armazenamento de dados e consumo de API.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 📦 Dependências do Projeto
 
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [CORS](https://expressjs.com/en/resources/middleware/cors.html)
+Para rodar o **FLOWY**, são necessárias as seguintes dependências:
+
+- [React Native](https://reactnative.dev/)  
+- [Expo](https://expo.dev/)  
+- [React Navigation](https://reactnavigation.org/) → Navegação entre telas  
+- [Expo-AV](https://docs.expo.dev/versions/latest/sdk/av/) → Player de música  
+- [AsyncStorage](https://react-native-async-storage.github.io/async-storage/) ou [SQLite](https://docs.expo.dev/versions/latest/sdk/sqlite/) → Armazenamento de playlists e usuários  
+- [Axios](https://axios-http.com/) → Requisições para API (opcional, se usar servidor remoto)  
+
+---
+
+## 🛠 Estrutura do Projeto
+
+```
+
+src/
+├── login/index.js ← Tela de Login e Cadastro
+├── home/index.js ← Tela principal com playlists
+├── grupos/index.js ← Biblioteca de artistas e álbuns
+├── player/index.js ← Player de música
+├── playlists/index.js ← Playlists do usuário
+├── sobre/index.js ← Tela sobre o app
+app.js ← Configuração da navegação principal
+
+```
+
+
+---
+
+## 📄 Funcionalidades do App
+
+- Tela de login e cadastro de usuário  
+- Exibição de playlists em destaque e músicas recomendadas  
+- Navegação por artistas e álbuns  
+- Player de música com controles básicos (play, pause, próximo, voltar)  
+- Criação, edição e gerenciamento de playlists do usuário  
+- Armazenamento de dados no banco (local ou remoto)  
+- Tela sobre o projeto e equipe  
+
+---
+
+## ⚡ Requisitos Funcionais
+
+| Código | Requisito Funcional | Descrição |
+|--------|-------------------|-----------|
+| RF01   | Tela de Login | Usuário entra com e-mail e senha; se válido, é direcionado à Home. |
+| RF02   | Cadastro de Usuário | Usuário sem conta pode criar nova conta; dados salvos no banco. |
+| RF03   | Tela Inicial | Exibe playlists em destaque e carrossel de músicas recomendadas. |
+| RF04   | Biblioteca de Artistas | Usuário pode explorar artistas e álbuns; clicar para ver músicas. |
+| RF05   | Player de Música | Reproduz músicas com controles play/pause, próximo e voltar. |
+| RF06   | Suporte a MP3 local/URL | Player suporta arquivos MP3 locais ou hospedados. |
+| RF07   | Criar Playlists | Usuário pode criar playlists personalizadas. |
+| RF08   | Adicionar músicas | Usuário pode adicionar músicas às playlists. |
+| RF09   | Armazenamento de Dados | Usuário, playlists e músicas são salvos no banco. |
+| RF10   | Tela Sobre | Exibe informações sobre o projeto e equipe. |
+| RF11   | Logout | Usuário pode sair da conta e voltar para o login. |
+
+---
+
+## ⚡ Requisitos Não Funcionais
+
+| Código | Requisito Não Funcional | Descrição |
+|--------|------------------------|-----------|
+| RNF01  | Plataforma | App desenvolvido em React Native/Expo, compatível com Android e iOS. |
+| RNF02  | Performance | Carregamento rápido de telas e músicas, sem travamentos perceptíveis. |
+| RNF03  | Segurança | Senhas devem ser armazenadas de forma segura (hash ou criptografia). |
+| RNF04  | Usabilidade | Interface intuitiva, com botões claros e controles acessíveis. |
+| RNF05  | Persistência de dados | Dados do usuário e playlists permanecem após fechar o app. |
+| RNF06  | Escalabilidade | Estrutura permite adicionar novos recursos no futuro. |
+| RNF07  | Confiabilidade | Lidar com falhas de rede sem travar o app. |
+| RNF08  | Design | Tela escura predominante, cores consistentes e interface agradável. |
+| RNF09  | Compatibilidade | Funciona em diferentes tamanhos de tela (responsivo). |
+| RNF10  | Legibilidade do código | Código modular, organizado e fácil de manter. |
 
 ---
 
 ## 🚀 Como Rodar o Projeto
 
-### 1. Clone este repositório
-
-No terminal do visual studio:
+1. **Clone o repositório**
 
 ```
-git clone https://github.com/seu-usuario/api-moda-feminina.git
-cd api-moda-feminina
+bash
+git clone https://github.com/seu-usuario/flowy.git
+cd flowy
 ```
 
-### 2. Instale as dependências
-
+2. **Instale as dependências**
+   
 ```
 npm install
-npm init -y
-npm install express cors
+expo install
 ```
 
-### 3. Inicie a API
-
-Abra o terminal e execute este comando:
-
+3. **Inicie o app com Expo**
+   
 ```
-node index.js
+expo start
 ```
-
-### A API estará disponível na web em: http://localhost:3000/produtos
-
----
-
-## 📄 Endpoints da API - Como usar:
-
-## 🧪 COMO TESTAR TODOS ESSES MÉTODOS
-
-✅ Opção 1: Postman ou Insomnia (Recomendamos Postman)
-
-Defina a URL: http://localhost:3000/produtos
-
-Selecione o método (GET, POST, etc.)
-
-Para POST e PUT, envie o corpo em JSON no body da requisição.
-
----
-
-✅ 1. GET /produtos — Listar todos os produtos
-Para quê serve:
-Retorna todos os produtos (roupas, calçados, acessórios).
-
-Como usar:
-No navegador: acesse
-
-```
-http://localhost:3000/produtos
-
-```
-
-No Postman:
-
-Método: GET
-URL: http://localhost:3000/produtos
-
-
-No terminal/CMD (cURL):
-
-```
-curl http://localhost:3000/produtos
-
-```
-
-Resposta esperada:
-```
-[
-  {
-    "id": 1,
-    "nome": "Vestido Floral",
-    "categoria": "Roupas",
-    "preco": 120.00,
-    "imagem": "URL da imagem"
-  },
-  ...
-]
-```
-
-### ➕ 2. POST /produtos — Adicionar novo produto
-
-Para quê serve:
-Adiciona um novo item à lista de produtos.
-
-Como usar:
-No Postman:
-
-Método: POST
-
-URL: http://localhost:3000/produtos
-
-Aba Body → raw → JSON
-```
-{
-  "id": 13,
-  "nome": "Blazer Feminino Rosa",
-  "categoria": "Roupas",
-  "preco": 149.90,
-  "imagem": "https://example.com/blazer-rosa.jpg" - url da imagem que você deseja implementar
-}
-
-```
-No terminal (cURL):
-
-```
-curl -X POST http://localhost:3000/produtos \
--H "Content-Type: application/json" \
--d '{
-  "id": 13,
-  "nome": "Blazer Feminino Rosa",
-  "categoria": "Roupas",
-  "preco": 149.90,
-  "imagem": "https://example.com/blazer-rosa.jpg"
-}'
-
-```
-
-### ✅ 3. PUT /produtos/:id — Atualizar um produto
-
-🔧 Para que serve:
-Atualiza as informações de um produto com base no ID (nome, preço, imagem, etc.).
-
-🧪 No Postman:
-
-Método: PUT
-
-URL: http://localhost:3000/produtos/2 (substitua o 2 pelo ID que deseja editar)
-
-Body: (em JSON)
-```
-{
-  "nome": "Bolsa de Couro Luxo",
-  "categoria": "Acessórios",
-  "preco": 129.90,
-  "imagem": "https://exemplo.com/imagem.jpg"
-}
-```
-Headers:
-```
-Content-Type: application/json
-```
-
-💻 No terminal (cURL):
-```
-curl -X PUT http://localhost:3000/produtos/2 \
-  -H "Content-Type: application/json" \
-  -d '{
-    "nome": "Bolsa de Couro Luxo",
-    "categoria": "Acessórios",
-    "preco": 129.90,
-    "imagem": "https://exemplo.com/imagem.jpg"
-  }'
-```
-
-### ✅ 4. DELETE /produtos/:id — Remover um produto
-
-🔧 Para que serve:
-Remove um produto específico com base no ID.
-
-🧪 No Postman:
-
-Método: DELETE
-```
-URL: http://localhost:3000/produtos/2 (substitua o 2 pelo ID do produto que deseja excluir)
-```
-Não precisa de body nem headers.
-
-💻 No terminal (cURL):
-```
-curl -X DELETE http://localhost:3000/produtos/2
-```
-
-🧠 Dica:
-Para confirmar se o produto foi realmente removido ou atualizado, use:
-
-```
-curl http://localhost:3000/produtos
-```
-Assim você verá a lista atualizada.
-
----
-
-## 🌐 Como Integrar com Front-End
-Você pode consumir esta API facilmente em seu front-end com fetch():
-
-```
-fetch('http://localhost:3000/produtos')
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.error(err));
-```
-
-## 📚 Créditos Acadêmicos
-Este projeto foi desenvolvido como parte da disciplina Programação Web 3, do curso Técnico em Desenvolvimento de Sistemas, sob orientação dos professores Fátima e Cláudio.
